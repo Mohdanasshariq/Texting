@@ -10,7 +10,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom"
 export default function App() {
   const[mode,setMode]=useState('light')
@@ -36,13 +35,25 @@ export default function App() {
     setMode('light')
     document.body.style.backgroundColor='white'
     showAlert("Light mode has been enabled","success")
-  }
+  }}
+  const togglerMode=()=>{
+    if(mode==='light'){
+      setMode('dark');
+      document.body.style.backgroundColor='#008080'
+      showAlert("Dark mode has been enabled","success")
+    }
+    else {
+      setMode('light')
+      document.body.style.backgroundColor='white'
+      showAlert("Light mode has been enabled","success")
+    }
+  
 
   }
   return (
     <>
    <Router>
-<Navbar title="Textutils" mode={mode}  toggleMode={toggleMode}/>
+<Navbar title="Texting" mode={mode} togglerMode={togglerMode} toggleMode={toggleMode}/>
 <Alert alert={alert}></Alert>
 <div className="container">
 <Routes>
@@ -61,4 +72,4 @@ export default function App() {
 </Router>
     </>
   );
-  }
+}
