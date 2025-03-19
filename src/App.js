@@ -36,24 +36,11 @@ export default function App() {
     document.body.style.backgroundColor='white'
     showAlert("Light mode has been enabled","success")
   }}
-  const togglerMode=()=>{
-    if(mode==='light'){
-      setMode('dark');
-      document.body.style.backgroundColor='#008080'
-      showAlert("Dark mode has been enabled","success")
-    }
-    else {
-      setMode('light')
-      document.body.style.backgroundColor='white'
-      showAlert("Light mode has been enabled","success")
-    }
-  
-
-  }
+ 
   return (
     <>
    <Router>
-<Navbar title="Texting" mode={mode} togglerMode={togglerMode} toggleMode={toggleMode}/>
+<Navbar title="Texting" mode={mode}  toggleMode={toggleMode}/>
 <Alert alert={alert}></Alert>
 <div className="container">
 <Routes>
